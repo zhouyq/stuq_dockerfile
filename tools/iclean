@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#=============================
+# <none> Mirror Cleanup script
+#=============================
+
+cclean
+
+ilist=`docker images | grep '<none>' | awk '{print $3}'`
+
+if [ "$ilist" != "" ];then
+
+docker rmi $ilist
+
+else
+  echo -e "\nThere is no mirror of <none>"
+fi
