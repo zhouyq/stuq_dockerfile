@@ -3,8 +3,7 @@
 #=================================
 # exited containers Cleanup script
 #=================================
-
-rm_ctns=$(docker ps -a -q --filter 'status=exited')
+rm_ctns=$(docker ps -a -q -f 'status=exited' -f 'status=created' -f 'status=dead')
 if [ -z "$rm_ctns" ];then
 	echo -e "\nno exited containers need to delete"
 else
