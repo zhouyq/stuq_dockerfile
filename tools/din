@@ -1,2 +1,6 @@
 #!/bin/bash
-docker exec -it $1 bash
+
+cid=$1
+shell=${2:-bash}
+
+docker exec -it $cid $shell
