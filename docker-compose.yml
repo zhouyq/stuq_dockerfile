@@ -1,0 +1,30 @@
+#zentao:
+#  image:zentao:lastest
+#  volumes:
+#  - /data/zentao:/data
+# links:
+#  - database
+
+
+database:
+  image: mysql:5.7
+  volumes:
+   - /data/mysql:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=pass4word
+   - MYSQL_USER=zentao
+   - MYSQL_PASSWORD=ahxieCh6tha2
+   - MYSQL_DATABASE=zentao
+  restart: always
+
+nginx:
+  image: nginx:latest
+  ports:
+   - 80:80
+  volumes:
+  - /data/nginx:/usr/share/nginx/html
+
+#stuq:
+#  image: stuq:3.2
+#  links:
+#  - database
