@@ -7,5 +7,16 @@ RUN sed -i 's#archive.ubuntu.com#mirrors.aliyun.com/ubuntu/#g' /etc/apt/sources.
 # install dstat 
 RUN apt-get update && apt-get install dstat -y && rm -rf /var/lib/apt/lists/*
 
+# 1. ENTRYPOINT
 ENTRYPOINT ["dstat","-t"]
-CMD ["-c","-l"]
+
+# 2. CMD
+#CMD ["dstat","-t"]
+
+
+# 3 ENTRYPOINT+CMD
+#ENTRYPOINT ["dstat","-t"]
+#CMD ["-c","-m"]
+
+# 4 shell 方式
+#CMD dstat -t
