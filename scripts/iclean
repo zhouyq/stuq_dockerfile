@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #=============================
-# <none> Mirror Cleanup script
+# <none> images cleanup script
 #=============================
 
 cclean
