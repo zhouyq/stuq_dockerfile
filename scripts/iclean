@@ -6,7 +6,7 @@
 
 cclean
 
-ilist=`docker images | grep '<none>' | awk '{print $3}'`
+ilist=`docker images --filter "dangling=true" -q`
 
 if [ "$ilist" != "" ];then
 
